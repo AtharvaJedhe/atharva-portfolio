@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atharva Shankar Jedhe - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true" tabindex="-1"></canvas>
+  <header>
+    <div class="container header-content">
+      <img src="profile.jpg" alt="Atharva Shankar Jedhe" class="profile-pic">
+      <div class="header-text">
+        <h1>Atharva Shankar Jedhe</h1>
+        <h2>Aspiring Software Developer</h2>
+      </div>
+      <a href="Atharva_Jedhe_Resume.pdf" target="_blank" class="resume-download-btn header-resume-btn">
+        <i class="fas fa-download"></i> Download Resume
+      </a>
+    </div>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects & Seminars</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="tabs">
+      <button class="tab-btn" data-target="about" id="tab-about">About</button>
+      <button class="tab-btn" data-target="education" id="tab-education">Education</button>
+      <button class="tab-btn" data-target="skills" id="tab-skills">Skills</button>
+      <button class="tab-btn" data-target="projects" id="tab-projects">Projects & Seminars</button>
+      <button class="tab-btn" data-target="certifications" id="tab-certifications">Certifications</button>
+      <span class="tab-contact-icons">
+        <button class="tab-btn contact-btn email" data-target="contact" id="tab-contact-email" title="Email"><i class="fas fa-envelope"></i></button>
+        <button class="tab-btn contact-btn phone" data-target="contact" id="tab-contact-phone" title="Phone"><i class="fas fa-phone"></i></button>
+        <button class="tab-btn contact-btn linkedin" data-target="contact" id="tab-contact-linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></button>
+        <button class="tab-btn contact-btn gitlab" data-target="contact" id="tab-contact-gitlab" title="GitLab"><i class="fab fa-gitlab"></i></button>
+      </span>
+    </div>
+    <section id="about">
+      <h3 class="about-title">About</h3>
+      <p>
+        <span id="about-typing"></span><span class="about-underline"></span>
+        <span class="about-fade"> I'm currently pursuing my M.Sc. in Computer Science with a focus on web and software development. I love turning ideas into code and am always exploring new tools to improve my craft.</span>
+      </p>
+    </section>
+    <section id="education">
+      <h3 class="education-title">Education</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h4>M.Sc. Computer Science</h4>
+            <span class="timeline-date">Pune University (2024–2026)</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h4>B.Sc. Computer Science</h4>
+            <span class="timeline-date">Pune University (2021–2024)</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h4>HSC – 80%</h4>
+            <span class="timeline-date">P.V.G.’s Muktangan English School and College (2019–2021)</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h4>SSC – 85.40%</h4>
+            <span class="timeline-date">New English School Ramanbaug (2018–2019)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills">
+      <h3 class="skills-title">Skills</h3>
+      <div class="skills-bubbles">
+        <span class="skill-bubble">C Language</span>
+        <span class="skill-bubble">Data Structures and Algorithms</span>
+        <span class="skill-bubble">OpenGL</span>
+        <span class="skill-bubble">HTML &amp; CSS</span>
+        <span class="skill-bubble">Operating System Fundamentals</span>
+        <span class="skill-bubble">CUDA and OpenCL (Beginner)</span>
+        <span class="skill-bubble">Win32-SDK</span>
+      </div>
+    </section>
+    <section id="projects">
+      <h3 class="projects-title">Projects & Seminars</h3>
+      <div class="projects-seminars-row">
+        <div class="projects-col">
+          <h4>Projects</h4>
+          <ul>
+            <li>WebGL Project – Sapano Ki Bahen
+              <a href="https://www.youtube.com/watch?v=0TnZE2jztNw" target="_blank" class="youtube-link" title="Watch Demo">
+                <i class="fab fa-youtube"></i> Watch Demo
+              </a>
+            </li>
+            <li>Real-Time Rendering Project – Manzar
+              <a href="https://www.youtube.com/watch?v=m3pOsg6cCUo" target="_blank" class="youtube-link" title="Watch Demo">
+                <i class="fab fa-youtube"></i> Watch Demo
+              </a>
+            </li>
+            <li>2D Game – Pacman</li>
+          </ul>
+        </div>
+        <div class="seminars-col">
+          <h4>Seminars</h4>
+          <ul>
+            <li>Computer Fundamentals</li>
+            <li>Multi-OS Installation</li>
+            <li>Heterogeneous Parallel Programming (CUDA and OpenCL)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="certifications">
+      <h3 class="certifications-title">Certifications</h3>
+      <div class="cert-row">
+        <div class="cert-card">
+          <a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=FND-2023-FQHG9X437L" target="_blank">
+            <img src="certificate2.jpg" alt="Fundamentals of Computer">
+            <div class="cert-caption">Fundamentals of Computer</div>
+          </a>
+        </div>
+        <div class="cert-card">
+          <a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=MOS-2023-G8W2ZIMEXC" target="_blank">
+            <img src="certificate3.jpg" alt="Multi-OS Installation">
+            <div class="cert-caption">Multi-OS Installation</div>
+          </a>
+        </div>
+        <div class="cert-card">
+          <a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=HPP-2023-TNH40R8ASY" target="_blank">
+            <img src="certificate4.jpg" alt="Heterogeneous Parallel Programming">
+            <div class="cert-caption">Heterogeneous Parallel Programming</div>
+          </a>
+        </div>
+        <div class="cert-card">
+          <a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=RTR-GM-2023-P2GSYLAU49" target="_blank">
+            <div class="cert-images-horizontal">
+              <img src="certificate1a.jpg" alt="Real Time Rendering Certificate Page 1">
+              <img src="certificate1b.jpg" alt="Real Time Rendering Certificate Page 2">
+            </div>
+            <div class="cert-caption">Real Time Rendering</div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h3 class="contact-title">Contact</h3>
+      <div class="contact-buttons">
+        <a class="contact-btn email" href="mailto:atharvajedhe.1106@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a class="contact-btn phone" href="tel:+919373275997"><i class="fas fa-phone"></i> Phone</a>
+        <a class="contact-btn linkedin" href="https://www.linkedin.com/in/atharva-jedhe-5a2433256/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a class="contact-btn gitlab" href="https://gitlab.com/XSneha/rtr5-atharva" target="_blank"><i class="fab fa-gitlab"></i> GitLab</a>
+        <a href="Atharva_Jedhe_Resume.pdf" target="_blank" class="resume-download-btn">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
+      </div>
+      <ul style="display:none;">
+        <li>Email: <a href="mailto:atharvajedhe.1106@gmail.com">atharvajedhe.1106@gmail.com</a></li>
+        <li>Phone: <a href="tel:+919373275997">+91 9373275997</a></li>
+        <li>Location: Sahakarnagar, Pune, Maharashtra 411009</li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/atharva-jedhe-5a2433256/" target="_blank">atharva-jedhe-5a2433256</a></li>
+        <li>GitLab: <a href="https://gitlab.com/XSneha/rtr5-atharva" target="_blank">XSneha/rtr5-atharva</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Atharva Shankar Jedhe</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 
