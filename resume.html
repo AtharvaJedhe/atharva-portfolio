@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atharva Shankar Jedhe - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+            font-size: 14px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* Geometric background shapes */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #00bcd4, #0097a7);
+            border-radius: 50%;
+            opacity: 0.25;
+            z-index: -1;
+        }
+        
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #ff00cc, #ff6b9d);
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #00bcd4;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00bcd4;
+            box-shadow: 0 4px 16px rgba(0,188,212,0.2);
+            background: #fff;
+        }
+        
+        .header-content {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #00bcd4, #0097a7);
+            border-radius: 50%;
+            opacity: 0.25;
+            z-index: -1;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: -15px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff00cc, #ff6b9d);
+            border-radius: 50%;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            color: #00bcd4;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .header h2 {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+        
+        @media print {
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 13px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .contact-item i {
+            color: #00bcd4;
+            width: 12px;
+            position: relative;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            color: #00bcd4;
+            border-bottom: 2px solid #00bcd4;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: #00bcd4;
+            border-radius: 50%;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid #00bcd4;
+            border-top: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .education-item, .project-item {
+            margin-bottom: 15px;
+        }
+        
+        .education-item h3, .project-item h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+        
+        .education-item .institution, .project-item .description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        
+        .education-item .date, .project-item .tech {
+            font-size: 13px;
+            color: #888;
+            font-style: italic;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        
+        .skill-category h4 {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            border: 1px solid #dee2e6;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0,188,212,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .skill-tag:hover::before {
+            left: 100%;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .cert-item {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #00bcd4;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cert-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 20px 20px 0;
+            border-color: transparent #00bcd4 transparent transparent;
+            opacity: 0.3;
+        }
+        
+        .cert-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,188,212,0.15);
+        }
+        
+        .cert-item h4 {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+        
+        .cert-item .issuer {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                font-size: 13px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .header h2 {
+                font-size: 16px;
+            }
+            .section-title {
+                font-size: 16px;
+            }
+        }
+        
+        /* Floating geometric shapes */
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.15;
+        }
+        
+        .shape-1 {
+            top: 15%;
+            right: 10%;
+            width: 40px;
+            height: 40px;
+            background: #00bcd4;
+            border-radius: 50%;
+        }
+        
+        .shape-2 {
+            top: 60%;
+            left: 5%;
+            width: 30px;
+            height: 30px;
+            background: #ff00cc;
+            transform: rotate(45deg);
+        }
+        
+        .shape-3 {
+            top: 80%;
+            right: 15%;
+            width: 25px;
+            height: 25px;
+            background: #00bcd4;
+            border-radius: 50%;
+        }
+        
+        .shape-4 {
+            top: 30%;
+            left: 15%;
+            width: 20px;
+            height: 20px;
+            background: #ff00cc;
+            transform: rotate(45deg);
+        }
+        
+        .header-contact-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.2rem;
+        }
+        .header-contact-row .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.2rem;
+        }
+        .header-contact-row .contact-item {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 0.1rem;
+        }
+        .header-contact-row .contact-item i {
+            margin-right: 0.6em;
+            color: #00bcd4;
+            font-size: 1.15em;
+            vertical-align: middle;
+        }
+        .header-name-title {
+            text-align: center;
+            margin-top: 1.1rem;
+            margin-bottom: 0.7rem;
+        }
+        .header-name-title h1 {
+            font-size: 2.2rem;
+            color: #00bcd4;
+            margin-bottom: 0.2rem;
+            font-weight: 600;
+        }
+        .header-name-title h2 {
+            font-size: 1.2rem;
+            color: #666;
+            font-weight: 400;
+        }
+        .about-section {
+            margin-top: 0.7rem;
+        }
+        @media (max-width: 700px) {
+            .header-contact-row {
+                flex-direction: column;
+                align-items: flex-end;
+                margin-bottom: 0.2rem;
+            }
+            .header-contact-row .contact-info {
+                align-items: flex-end;
+                font-size: 12px;
+            }
+            .header-name-title {
+                margin-top: 0.7rem;
+                margin-bottom: 0.5rem;
+            }
+            .about-section {
+                margin-top: 0.5rem;
+            }
+        }
+        @media print {
+            a[href] {
+                color: #0645ad !important;
+                text-decoration: underline !important;
+            }
+        }
+        .contact-item.portfolio-link a {
+            color: #00bcd4 !important;
+            font-weight: 600;
+            background: rgba(0,188,212,0.08);
+            padding: 2px 10px;
+            border-radius: 12px;
+            transition: background 0.2s, color 0.2s;
+            box-shadow: 0 1px 4px rgba(0,188,212,0.08);
+            text-decoration: underline;
+        }
+        .contact-item.portfolio-link a:hover,
+        .contact-item.portfolio-link a:focus {
+            background: #00bcd4;
+            color: #fff !important;
+            text-decoration: none;
+        }
+        .contact-item.portfolio-link i {
+            color: #00bcd4;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating geometric shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+    
+    <div class="container">
+        <!-- Header Contact Row -->
+        <div class="header-contact-row">
+            <div></div>
+            <div class="contact-info right-align">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:atharvajedhe.1106@gmail.com" target="_blank" style="color:inherit;text-decoration:underline;">atharvajedhe.1106@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+919373275997" style="color:inherit;text-decoration:underline;">+91 9373275997</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Sahakarnagar, Pune, Maharashtra 411009</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/atharva-jedhe-5a2433256/" target="_blank" style="color:inherit;text-decoration:underline;">linkedin.com/in/atharva-jedhe-5a2433256</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-gitlab"></i>
+                    <a href="https://gitlab.com/XSneha/rtr5-atharva" target="_blank" style="color:inherit;text-decoration:underline;">gitlab.com/XSneha/rtr5-atharva</a>
+                </div>
+                <div class="contact-item portfolio-link">
+                    <i class="fas fa-globe"></i>
+                    <a href="https://atharvajedhe.github.io/atharva-portfolio/" target="_blank">atharvajedhe.github.io/atharva-portfolio</a>
+                </div>
+            </div>
+        </div>
+        <!-- Name and Title -->
+        <div class="header-name-title">
+            <h1>Atharva Shankar Jedhe</h1>
+            <h2>Aspiring Software Developer</h2>
+        </div>
+        <!-- About -->
+        <div class="section about-section">
+            <h2 class="section-title">About</h2>
+            <p style="font-size: 14px; line-height: 1.5; color: #555;">
+                Currently pursuing M.Sc. in Computer Science with a focus on native software development. 
+                Passionate about turning ideas into code and continuously exploring new tools to improve development skills. 
+                Strong foundation in computer fundamentals, data structures, and modern programming technologies.
+            </p>
+        </div>
+
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <h3>M.Sc. Computer Science</h3>
+                <div class="institution">Pune University</div>
+                <div class="date">2024 – 2026</div>
+            </div>
+            <div class="education-item">
+                <h3>B.Sc. Computer Science</h3>
+                <div class="institution">Pune University</div>
+                <div class="date">2021 – 2024</div>
+            </div>
+            <div class="education-item">
+                <h3>HSC – 80%</h3>
+                <div class="institution">P.V.G.'s Muktangan English School and College</div>
+                <div class="date">2019 – 2021</div>
+            </div>
+            <div class="education-item">
+                <h3>SSC – 85.40%</h3>
+                <div class="institution">New English School Ramanbaug</div>
+                <div class="date">2018 – 2019</div>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <div class="skill-list">
+                        <span class="skill-tag">C Language</span>
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">HTML & CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Computer Science</h4>
+                    <div class="skill-list">
+                        <span class="skill-tag">Data Structures</span>
+                        <span class="skill-tag">Algorithms</span>
+                        <span class="skill-tag">Operating Systems</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Graphics & Rendering</h4>
+                    <div class="skill-list">
+                        <span class="skill-tag">OpenGL</span>
+                        <span class="skill-tag">WebGL</span>
+                        <span class="skill-tag">Real-Time Rendering</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Parallel Computing</h4>
+                    <div class="skill-list">
+                        <span class="skill-tag">CUDA</span>
+                        <span class="skill-tag">OpenCL</span>
+                        <span class="skill-tag">Heterogeneous Programming</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Development Tools</h4>
+                    <div class="skill-list">
+                        <span class="skill-tag">Win32-SDK</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitLab</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-item">
+                <h3>WebGL Project – Sapano Ki Bahen</h3>
+                <div class="description">
+                    WebGL application demonstrating 3D graphics and web technologies
+                    <a href="https://www.youtube.com/watch?v=0TnZE2jztNw" target="_blank" style="margin-left:0.5em;font-size:0.95em;">[Demo]</a>
+                </div>
+                <div class="tech">Technologies: WebGL, JavaScript, HTML5</div>
+            </div>
+            <div class="project-item">
+                <h3>Real-Time Rendering Project – Manzar</h3>
+                <div class="description">
+                    Advanced real-time rendering project showcasing modern graphics techniques
+                    <a href="https://www.youtube.com/watch?v=m3pOsg6cCUo" target="_blank" style="margin-left:0.5em;font-size:0.95em;">[Demo]</a>
+                </div>
+                <div class="tech">Technologies: OpenGL, C++, Real-Time Rendering</div>
+            </div>
+            <div class="project-item">
+                <h3>2D Game – Pacman</h3>
+                <div class="description">Classic Pacman game implementation with modern programming practices</div>
+                <div class="tech">Technologies: C++, Game Development, 2D Graphics</div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="section">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-grid">
+                <div class="cert-item">
+                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=FND-2023-FQHG9X437L" target="_blank" style="color:inherit;text-decoration:underline;">Fundamentals of Computer</a></h4>
+                    <div class="issuer">Astromedicomp</div>
+                </div>
+                <div class="cert-item">
+                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=MOS-2023-G8W2ZIMEXC" target="_blank" style="color:inherit;text-decoration:underline;">Multi-OS Installation</a></h4>
+                    <div class="issuer">Astromedicomp</div>
+                </div>
+                <div class="cert-item">
+                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=HPP-2023-TNH40R8ASY" target="_blank" style="color:inherit;text-decoration:underline;">Heterogeneous Parallel Programming</a></h4>
+                    <div class="issuer">Astromedicomp</div>
+                </div>
+                <div class="cert-item">
+                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=RTR-GM-2023-P2GSYLAU49" target="_blank" style="color:inherit;text-decoration:underline;">Real Time Rendering</a></h4>
+                    <div class="issuer">Astromedicomp</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seminars -->
+        <div class="section">
+            <h2 class="section-title">Seminars & Workshops</h2>
+            <div class="project-item">
+                <h3>Computer Fundamentals</h3>
+                <div class="description">Comprehensive overview of computer architecture and basic principles</div>
+            </div>
+            <div class="project-item">
+                <h3>Multi-OS Installation</h3>
+                <div class="description">Hands-on workshop on installing and configuring multiple operating systems</div>
+            </div>
+            <div class="project-item">
+                <h3>Heterogeneous Parallel Programming</h3>
+                <div class="description">Advanced seminar on CUDA and OpenCL for parallel computing</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
