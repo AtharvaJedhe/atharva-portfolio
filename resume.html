@@ -13,67 +13,39 @@
         
         body {
             font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #333;
             background: white;
-            font-size: 14px;
+            font-size: 13px;
             position: relative;
             overflow-x: hidden;
         }
         
-        /* Geometric background shapes */
-        body::before {
-            content: '';
-            position: fixed;
-            top: -50px;
-            right: -50px;
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(45deg, #00bcd4, #0097a7);
-            border-radius: 50%;
-            opacity: 0.25;
-            z-index: -1;
-        }
-        
-        body::after {
-            content: '';
-            position: fixed;
-            bottom: -30px;
-            left: -30px;
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(45deg, #ff00cc, #ff6b9d);
-            border-radius: 50%;
-            opacity: 0.2;
-            z-index: -1;
-        }
+        /* Remove geometric background shapes for print and compactness */
         
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;
         }
         
         .header {
             text-align: center;
-            border-bottom: 3px solid #00bcd4;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
+            border-bottom: 2px solid #00bcd4;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 20px;
             justify-content: center;
         }
         
         .profile-pic {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #00bcd4;
-            box-shadow: 0 4px 16px rgba(0,188,212,0.2);
             background: #fff;
         }
         
@@ -82,41 +54,15 @@
             text-align: left;
         }
         
-        .header::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(45deg, #00bcd4, #0097a7);
-            border-radius: 50%;
-            opacity: 0.25;
-            z-index: -1;
-        }
-        
-        .header::after {
-            content: '';
-            position: absolute;
-            top: 10px;
-            right: -15px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #ff00cc, #ff6b9d);
-            border-radius: 50%;
-            opacity: 0.2;
-            z-index: -1;
-        }
-        
         .header h1 {
-            font-size: 32px;
+            font-size: 22px;
             color: #00bcd4;
             margin-bottom: 5px;
             font-weight: 600;
         }
         
         .header h2 {
-            font-size: 18px;
+            font-size: 14px;
             color: #666;
             margin-bottom: 15px;
             font-weight: 400;
@@ -124,8 +70,8 @@
         
         @media print {
             .profile-pic {
-                width: 100px;
-                height: 100px;
+                width: 60px;
+                height: 60px;
             }
         }
         
@@ -133,8 +79,8 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
-            font-size: 13px;
+            gap: 10px;
+            font-size: 12px;
         }
         
         .contact-item {
@@ -150,18 +96,18 @@
         }
         
         .section {
-            margin-bottom: 25px;
+            margin-bottom: 14px;
         }
         
         .section-title {
-            font-size: 18px;
+            font-size: 15px;
             color: #00bcd4;
-            border-bottom: 2px solid #00bcd4;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+            border-bottom: 1px solid #00bcd4;
+            padding-bottom: 2px;
+            margin-bottom: 8px;
             font-weight: 600;
             position: relative;
-            padding-left: 15px;
+            padding-left: 10px;
         }
         
         .section-title::before {
@@ -190,40 +136,40 @@
         }
         
         .education-item, .project-item {
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
         
         .education-item h3, .project-item h3 {
-            font-size: 16px;
+            font-size: 13px;
             color: #333;
             margin-bottom: 3px;
             font-weight: 600;
         }
         
         .education-item .institution, .project-item .description {
-            font-size: 14px;
+            font-size: 12px;
             color: #666;
             margin-bottom: 3px;
         }
         
         .education-item .date, .project-item .tech {
-            font-size: 13px;
+            font-size: 11px;
             color: #888;
             font-style: italic;
         }
         
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 6px;
         }
         
         .skill-category {
-            margin-bottom: 15px;
+            margin-bottom: 7px;
         }
         
         .skill-category h4 {
-            font-size: 15px;
+            font-size: 12px;
             color: #333;
             margin-bottom: 5px;
             font-weight: 600;
@@ -232,98 +178,91 @@
         .skill-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 5px;
         }
         
         .skill-tag {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            background: #f8f9fa;
             color: #333;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 11px;
             border: 1px solid #dee2e6;
             position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .skill-tag::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,188,212,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .skill-tag:hover::before {
-            left: 100%;
         }
         
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 7px;
         }
         
         .cert-item {
-            background: linear-gradient(135deg, #f8f9fa, #ffffff);
-            padding: 12px;
-            border-radius: 8px;
-            border-left: 4px solid #00bcd4;
+            background: #f8f9fa;
+            padding: 7px;
+            border-radius: 5px;
+            border-left: 3px solid #00bcd4;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .cert-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 20px 20px 0;
-            border-color: transparent #00bcd4 transparent transparent;
-            opacity: 0.3;
-        }
-        
-        .cert-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,188,212,0.15);
         }
         
         .cert-item h4 {
-            font-size: 14px;
+            font-size: 12px;
             color: #333;
             margin-bottom: 3px;
             font-weight: 600;
         }
         
         .cert-item .issuer {
-            font-size: 12px;
+            font-size: 11px;
             color: #666;
         }
         
         @media print {
             body {
-                font-size: 13px;
+                font-size: 11px;
             }
             .container {
-                padding: 15px;
+                padding: 5px;
             }
             .header h1 {
-                font-size: 28px;
+                font-size: 18px;
             }
             .header h2 {
-                font-size: 16px;
+                font-size: 12px;
             }
             .section-title {
-                font-size: 16px;
+                font-size: 12px;
+            }
+            .profile-pic {
+                width: 40px;
+                height: 40px;
+            }
+            .section {
+                margin-bottom: 7px;
+            }
+            .education-item h3, .project-item h3 {
+                font-size: 11px;
+            }
+            .education-item .institution, .project-item .description {
+                font-size: 10px;
+            }
+            .education-item .date, .project-item .tech {
+                font-size: 9px;
+            }
+            .skill-tag {
+                font-size: 9px;
+                padding: 2px 5px;
+            }
+            .cert-item h4 {
+                font-size: 10px;
+            }
+            .cert-item .issuer {
+                font-size: 9px;
+            }
+            ul {
+                margin-left: 1em;
             }
         }
         
@@ -499,7 +438,7 @@
                 </div>
                 <div class="contact-item">
                     <i class="fab fa-gitlab"></i>
-                    <a href="https://gitlab.com/XSneha/rtr5-atharva" target="_blank" style="color:inherit;text-decoration:underline;">gitlab.com/XSneha/rtr5-atharva</a>
+                    <a href="https://gitlab.com/atharvajedhe.1106/real-time-rendering-assignments" target="_blank" style="color:inherit;text-decoration:underline;">gitlab.com/atharvajedhe.1106/real-time-rendering-assignments</a>
                 </div>
                 <div class="contact-item portfolio-link">
                     <i class="fas fa-globe"></i>
@@ -523,72 +462,49 @@
         <!-- Key Skills -->
         <div class="section">
             <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Programming Skills</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">C Language</span>
-                        <span class="skill-tag">C++</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Computer Science</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">Data Structures</span>
-                        <span class="skill-tag">Algorithms</span>
-                        <span class="skill-tag">Operating System Fundamentals</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Graphics & Rendering</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">OpenGL</span>
-                        <span class="skill-tag">WebGL</span>
-                        <span class="skill-tag">Real-Time Rendering</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Parallel Computing</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">CUDA (Beginner)</span>
-                        <span class="skill-tag">OpenCL (Beginner)</span>
-                        <span class="skill-tag">Heterogeneous Programming</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h4>Development Tools</h4>
-                    <div class="skill-list">
-                        <span class="skill-tag">Win32-SDK</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitLab</span>
-                    </div>
-                </div>
+            <div style="font-size:11px;">
+                <b>Programming Skills:</b> C Language, C++<br>
+                <b>Computer Science:</b> Data Structures, Algorithms, Operating System Fundamentals<br>
+                <b>Graphics & Rendering:</b> OpenGL, WebGL, Real-Time Rendering<br>
+                <b>Parallel Computing:</b> CUDA (Beginner), OpenCL (Beginner), Heterogeneous Parallel Programming<br>
+                <b>Development Tools:</b> Win32-SDK, Git, GitLab
             </div>
         </div>
         <!-- Education -->
         <div class="section">
             <h2 class="section-title">Education</h2>
-            <div class="education-item">
-                <h3>M.Sc. Computer Science</h3>
-                <div class="institution">Pune University</div>
-                <div class="date">2024 – 2026 (Pursuing)</div>
-            </div>
-            <div class="education-item">
-                <h3>B.Sc. Computer Science</h3>
-                <div class="institution">Pune University</div>
-                <div class="date">2021 – 2024</div>
-                <div class="date"><b style='color:#00bcd4;'>CGPA: 7.97</b></div>
-            </div>
-            <div class="education-item">
-                <h3>HSC – 80%</h3>
-                <div class="institution">P.V.G.'s Muktangan English School and College</div>
-                <div class="date">2019 – 2021</div>
-            </div>
-            <div class="education-item">
-                <h3>SSC – 85.40%</h3>
-                <div class="institution">New English School Ramanbaug</div>
-                <div class="date">2018 – 2019</div>
-            </div>
+            <table style="width:100%; font-size:11px; border-collapse:collapse;">
+                <tr>
+                    <th style="text-align:left; padding:2px 4px;">Year</th>
+                    <th style="text-align:left; padding:2px 4px;">Degree</th>
+                    <th style="text-align:left; padding:2px 4px;">University/School</th>
+                    <th style="text-align:left; padding:2px 4px;">CGPA/%</th>
+                </tr>
+                <tr>
+                    <td style="padding:2px 4px;">2024–2026 (Pursuing)</td>
+                    <td style="padding:2px 4px;"><b>M.Sc. Computer Science</b></td>
+                    <td style="padding:2px 4px;">Pune University</td>
+                    <td style="padding:2px 4px;"></td>
+                </tr>
+                <tr>
+                    <td style="padding:2px 4px;">2021–2024</td>
+                    <td style="padding:2px 4px;"><b>B.Sc. Computer Science</b></td>
+                    <td style="padding:2px 4px;">Pune University</td>
+                    <td style="padding:2px 4px;"><b style='color:#00bcd4;'>CGPA: 7.97</b></td>
+                </tr>
+                <tr>
+                    <td style="padding:2px 4px;">2019–2021</td>
+                    <td style="padding:2px 4px;"><b>HSC</b></td>
+                    <td style="padding:2px 4px;">P.V.G.'s Muktangan English School and College</td>
+                    <td style="padding:2px 4px;">80%</td>
+                </tr>
+                <tr>
+                    <td style="padding:2px 4px;">2018–2019</td>
+                    <td style="padding:2px 4px;"><b>SSC</b></td>
+                    <td style="padding:2px 4px;">New English School Ramanbaug</td>
+                    <td style="padding:2px 4px;">85.40%</td>
+                </tr>
+            </table>
         </div>
         <!-- Projects & Experience -->
         <div class="section">
@@ -617,54 +533,31 @@
         </div>
         <!-- Certifications -->
         <div class="section">
-            <h2 class="section-title">Certifications</h2>
+            <h2 class="section-title">Certifications and Courses</h2>
             <div class="certifications-grid">
-                <div class="cert-item">
-                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=FND-2023-FQHG9X437L" target="_blank" style="color:inherit;text-decoration:underline;">Fundamentals of Computer</a></h4>
-                    <div class="issuer">Astromedicomp</div>
-                </div>
-                <div class="cert-item">
-                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=MOS-2023-G8W2ZIMEXC" target="_blank" style="color:inherit;text-decoration:underline;">Multi-OS Installation</a></h4>
-                    <div class="issuer">Astromedicomp</div>
-                </div>
-                <div class="cert-item">
-                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=HPP-2023-TNH40R8ASY" target="_blank" style="color:inherit;text-decoration:underline;">Heterogeneous Parallel Programming</a></h4>
-                    <div class="issuer">Astromedicomp</div>
-                </div>
                 <div class="cert-item">
                     <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=RTR-GM-2023-P2GSYLAU49" target="_blank" style="color:inherit;text-decoration:underline;">Real Time Rendering</a></h4>
                     <div class="issuer">Astromedicomp</div>
                 </div>
+                <div class="cert-item">
+                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=FND-2023-FQHG9X437L" target="_blank" style="color:inherit;text-decoration:underline;">Fundamentals of Computer</a></h4>
+                    <div class="issuer">Astromedicomp</div>
+                    <div class="issuer" style="font-style:italic; color:#666;">Seminar: Computer architecture and basic principles</div>
+                </div>
+                <div class="cert-item">
+                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=MOS-2023-G8W2ZIMEXC" target="_blank" style="color:inherit;text-decoration:underline;">Multi-OS Installation</a></h4>
+                    <div class="issuer">Astromedicomp</div>
+                    <div class="issuer" style="font-style:italic; color:#666;">Seminar: Installing and configuring multiple operating systems</div>
+                </div>
+                <div class="cert-item">
+                    <h4><a href="https://astromedicomp.org/Certificate/StudentCertificate.php?cuid=HPP-2023-TNH40R8ASY" target="_blank" style="color:inherit;text-decoration:underline;">Heterogeneous Parallel Programming</a></h4>
+                    <div class="issuer">Astromedicomp</div>
+                    <div class="issuer" style="font-style:italic; color:#666;">Seminar: CUDA and OpenCL for parallel computing</div>
+                </div>
             </div>
-        </div>
-        <!-- Seminars & Workshops -->
-        <div class="section">
-            <h2 class="section-title">Seminars & Workshops</h2>
-            <div class="project-item">
-                <h3>Computer Fundamentals</h3>
-                <div class="description">Comprehensive overview of computer architecture and basic principles.</div>
-            </div>
-            <div class="project-item">
-                <h3>Multi-OS Installation</h3>
-                <div class="description">Hands-on workshop on installing and configuring multiple operating systems.</div>
-            </div>
-            <div class="project-item">
-                <h3>Heterogeneous Parallel Programming</h3>
-                <div class="description">Advanced seminar on CUDA and OpenCL for parallel computing.</div>
-            </div>
-        </div>
-        <!-- Soft Skills -->
-        <div class="section">
-            <h2 class="section-title">Soft Skills</h2>
-            <ul style="margin-left: 1.2em; color: #555; font-size: 14px;">
-                <li>Quick learner, flexible, and proactive</li>
-                <li>Strong analytical and problem-solving skills</li>
-                <li>Effective team collaboration and communication</li>
-                <li>Ability to deliver high-quality reports and documentation</li>
-            </ul>
         </div>
         <!-- Footer Note -->
-        <div class="section" style="text-align:center; color:#888; font-size:12px; margin-top:30px;">
+        <div style="width:100%; text-align:center; color:#888; font-size:10px; margin-top:10px;">
             References available upon request.
         </div>
     </div>
